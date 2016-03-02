@@ -1,0 +1,4 @@
+How do I evaluate A / B (mod 1000000007)?
+When working with prime moduli it's often easiest, from an implementation perspective, 
+to find the inverse using modular exponentiation. (I personally find this algorithm easier to write and it performs similarly)
+For example, compute ab−1(modp) as abp−2(modp) (making use of Fermat's little theorem
