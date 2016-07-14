@@ -7,9 +7,9 @@ using namespace std;
 
 //int cnt;
 
-int merge(int a[],int l,int m,int r)
+long long int merge(long long int a[],long long int l,long long int m,long long int r)
 {
-	int n1,n2,i,j,k,cnt=0;
+	long long int n1,n2,i,j,k,cnt=0;
 	n1=m+1-l;
 	n2=r-m;							//be careful with this
 	int a1[n1], a2[n2];
@@ -53,9 +53,9 @@ int merge(int a[],int l,int m,int r)
 	return cnt;
 }
 
-int mergesort(int a[],int l,int r)
+long long int mergesort(long long int a[],long long int l,long long int r)
 {
-    int m,cnt=0;
+    long long int m,cnt=0;
 	if(l<r){
 	    m=l+(r-l)/2;
 		cnt=mergesort(a,l,m);
@@ -67,17 +67,15 @@ int mergesort(int a[],int l,int r)
 
 int main()
 {
-    int t,n,p;
-    scanf("%d",&t);
-    for(int i=1;i<=t;i++)
-    {
-        scanf("%d",&n);
-        int a[n];
-        for(int i=0;i<n;i++)
-            scanf("%d",&a[i]);
+    long long int n,p;
+  
+    scanf("%lld",&n);
+    long long int a[n];
+    for(long long int i=0;i<n;i++)
+    	scanf("%lld",&a[i]);
         //cnt=0;    
-        p=mergesort(a,0,n-1);
-        printf("Case %d: %d\n",t,p);
-    }
+    p=mergesort(a,0,n-1);
+    printf("%lld\n",p);
+    
     return 0;
 }
